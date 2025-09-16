@@ -8,10 +8,10 @@ import imageio
 import torch
 from diffusers.utils import load_image
 
-from skyreels_v2_infer import DiffusionForcingPipeline
-from skyreels_v2_infer.modules import download_model
-from skyreels_v2_infer.pipelines import PromptEnhancer
-from skyreels_v2_infer.pipelines.image2video_pipeline import resizecrop
+from capsule_movie_core import DiffusionForcingPipeline
+from capsule_movie_core.modules import download_model
+from capsule_movie_core.pipelines import PromptEnhancer
+from capsule_movie_core.pipelines.image2video_pipeline import resizecrop
 from moviepy.editor import VideoFileClip
 
 
@@ -101,7 +101,7 @@ if __name__ == "__main__":
     os.makedirs(save_dir, exist_ok=True)
     local_rank = 0
     if args.use_usp:
-        assert not args.prompt_enhancer, "`--prompt_enhancer` is not allowed if using `--use_usp`. We recommend running the skyreels_v2_infer/pipelines/prompt_enhancer.py script first to generate enhanced prompt before enabling the `--use_usp` parameter."
+        assert not args.prompt_enhancer, "`--prompt_enhancer` is not allowed if using `--use_usp`. We recommend running the capsule_movie_core/pipelines/prompt_enhancer.py script first to generate enhanced prompt before enabling the `--use_usp` parameter."
         from xfuser.core.distributed import initialize_model_parallel, init_distributed_environment
         import torch.distributed as dist
 
