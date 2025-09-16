@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+  }
+
+  #app {
+    width: 100%;
+    margin: 0 auto;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-gradient-to-r from-capsule-blue to-capsule-purple hover:from-capsule-purple hover:to-capsule-blue focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-capsule-blue transition-all duration-200 transform hover:scale-105;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center px-6 py-3 border border-capsule-gray-300 text-base font-medium rounded-lg text-capsule-gray-700 bg-white hover:bg-capsule-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-capsule-blue transition-all duration-200;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center px-6 py-3 text-base font-medium rounded-lg text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white/20 transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-white/5 backdrop-blur-md rounded-xl border border-white/10 p-6 hover:bg-white/10 transition-all duration-300;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 text-white bg-white/10 border border-white/20 rounded-lg placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-capsule-blue focus:border-transparent backdrop-blur-sm transition-all duration-200;
+  }
+
+  .section-padding {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-max {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-capsule-blue via-capsule-purple to-capsule-gold bg-clip-text text-transparent;
+  }
+
+  .glass-effect {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.5);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.7);
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.4); }
+  50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.8); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Dark theme overrides */
+.dark {
+  color-scheme: dark;
+}
