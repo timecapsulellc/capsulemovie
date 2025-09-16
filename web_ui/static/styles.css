@@ -1,0 +1,19 @@
+/* Custom styles */
+.container {
+    max-width: 1200px;
+}
+
+.progress-bar {
+    transition: width 0.3s ease-in-out;
+}
+
+/* Animation for loading states */
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
